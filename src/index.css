@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grid-container {
+    /* border: 1px solid black;
+    display: grid;
+    height: 50rem;
+    gap: 1.3rem; */
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "one two four"
+        "one two four-low";
+}
