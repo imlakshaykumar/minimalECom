@@ -1,7 +1,7 @@
-import image1 from '../assets/static/home-img-1.3de7da0f1e4634169c62.jpg'
-import image2 from '../assets/static/home-img-2.4daa711cfda65062efd0.jpg'
-import image3 from '../assets/static/home-img-3.60734311499ba1dbbc41.jpg'
-import image4 from '../assets/static/home-img-4.672d1d0d7656e2a778f6.jpg'
+import image1 from '../assets/static/home/home-img-1.3de7da0f1e4634169c62.jpg'
+import image2 from '../assets/static/home/home-img-2.4daa711cfda65062efd0.jpg'
+import image3 from '../assets/static/home/home-img-3.60734311499ba1dbbc41.jpg'
+import image4 from '../assets/static/home/home-img-4.672d1d0d7656e2a778f6.jpg'
 
 export const HomeSection = () => {
     return (
