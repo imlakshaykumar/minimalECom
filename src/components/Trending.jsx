@@ -20,7 +20,7 @@ export const Trending = () => {
                         </button>
                     </div>
                 </div>
-                <div className="trending-content w-full grid grid-rows-1 grid-flow-col overflow-hidden">
+                <div className="trending-content w-full grid grid-rows-1 grid-flow-col overflow-y-hidden overflow-x-auto scrollbar-none">
                     <div className="flex gap-5">
                         {
                             filteredData.map((item, key) => {

@@ -13,3 +13,14 @@
         "one two four"
         "one two four-low";
 }
+
+/* Hide scrollbar for all browsers */
+.scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
