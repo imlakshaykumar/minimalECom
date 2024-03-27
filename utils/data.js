@@ -82,7 +82,7 @@ export const data = [
     },
     {
         image: image13,
-        name: "unbleached cotton pads 120",
+        name: "unbleached cotton pads",
         price: "$43"
     },
     {
