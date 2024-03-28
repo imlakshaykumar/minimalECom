@@ -1,8 +1,8 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { NavBar } from "./components/global/NavBar";
-import { Home } from "../pages/Home";
+import { Home } from "./pages/Home";
 import { Footer } from "./components/global/Footer";
-import { Categories } from "../pages/Categories";
+import { Categories } from "./pages/Categories";
 import { useState } from "react";
 
 function App() {

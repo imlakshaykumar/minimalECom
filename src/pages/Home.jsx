@@ -1,8 +1,8 @@
-import { Banner1 } from "../src/components/Banner1"
-import { Banner2 } from "../src/components/Banner2"
-import { HomeSection } from "../src/components/HomeSection"
-import { ProudSection } from "../src/components/ProudSection"
-import { Trending } from "../src/components/Trending"
+import { Banner1 } from "../components/Banner1"
+import { Banner2 } from "../components/Banner2"
+import { HomeSection } from "../components/HomeSection"
+import { ProudSection } from "../components/ProudSection"
+import { Trending } from "../components/Trending"
 
 // eslint-disable-next-line react/prop-types
 export const Home = ({ setCategory }) => {
