@@ -1,15 +1,27 @@
+/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import logo from '/vite.svg'
 
-export const NavBar = () => {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+export const NavBar = ({ category, setCategory }) => {
+  const handleCategoryClick = () => {
+    setCategory('all');
+  };
   return (
     <div className='w-full flex justify-center shadow-md'>
       <div className='flex w-[1200px] justify-between items-center px-8 py-6'>
         <div className='logo-div object-cover cursor-pointer'>
-          <img src={ logo } alt="logo" className='logo w-[60px] h-auto block' />
+          <Link to='/'>
+            <img src={ logo } alt="logo" className='logo w-[60px] h-auto block' />
+          </Link>
         </div>
         <div className="nav-items flex gap-7 justify-between items-center">
           <ul className="nav-items-list flex gap-7 w-full justify-evenly uppercase items-center">
-            <li className="item cursor-pointer hover:underline font-medium">categories</li>
+            <li className="item cursor-pointer hover:underline font-medium" onClick={ handleCategoryClick }>
+              <Link to={ `/categories/all` }>
+                categories
+              </Link>
+            </li>
             <li className="item cursor-pointer hover:underline font-medium">product page</li>
           </ul>
           <div className="cart-logo-div cursor-pointer object-cover">

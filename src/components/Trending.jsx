@@ -3,8 +3,11 @@ import { data } from "../../utils/data";
 // import { useState } from "react";
 
 export const Trending = () => {
+    let startIndex = 8;
+    let endIndex = 20;
 
-    const filteredData = data.slice(8, 20);
+    const filteredData = data.slice(startIndex, endIndex);
+
 
     return (
         <>

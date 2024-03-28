@@ -23,101 +23,121 @@ export const data = [
     {
         image: image1,
         name: "Little American Sheepskin",
-        price: "$89"
+        price: "$89",
+        dateCategory: 'chairs'
     },
     {
         image: image2,
         name: "Pop-up toaster",
-        price: "$19"
+        price: "$19",
+        dateCategory: 'kitchen'
     },
     {
         image: image3,
         name: "Lamp light blue",
-        price: "$32"
+        price: "$32",
+        dateCategory: 'lamps'
     },
     {
         image: image4,
         name: "Pulp unit 5-compartments",
-        price: "$54"
+        price: "$54",
+        dateCategory: 'furnitures'
     },
     {
         image: image5,
         name: "Golden modern light",
-        price: "$43"
+        price: "$43",
+        dateCategory: 'lamps'
     },
     {
         image: image6,
         name: "Body oil 200ml",
-        price: "$74"
+        price: "$74",
+        dateCategory: 'skin-care'
     },
     {
         image: image7,
         name: "Black and white lamp",
-        price: "$10"
+        price: "$10",
+        dateCategory: 'lamps'
     },
     {
         image: image8,
         name: "Shelf a black ash/black",
-        price: "$82"
+        price: "$82",
+        dateCategory: 'furnitures'
     },
     {
         image: image9,
         name: "Cube lolo vase black",
-        price: "$89"
+        price: "$89",
+        dateCategory: 'furnitures'
     },
     {
         image: image10,
         name: "Traditional Armchair",
-        price: "$19"
+        price: "$19",
+        dateCategory: 'chairs'
     },
     {
         image: image11,
         name: "The sun pendant black",
-        price: "$32"
+        price: "$32",
+        dateCategory: 'lamps'
     },
     {
         image: image12,
         name: "Simple golden lamp",
-        price: "$54"
+        price: "$54",
+        dateCategory: 'lamps'
     },
     {
         image: image13,
         name: "unbleached cotton pads",
-        price: "$43"
+        price: "$43",
+        dateCategory: 'skin-care'
     },
     {
         image: image14,
         name: "Oak spanish chair",
-        price: "$74"
+        price: "$74",
+        dateCategory: 'chairs'
     },
     {
         image: image15,
         name: "Copanhagen armchair",
-        price: "$10"
+        price: "$10",
+        dateCategory: 'chairs'
     },
     {
         image: image16,
         name: "Anti dark light",
-        price: "$82"
+        price: "$82",
+        dateCategory: 'electronics'
     },
     {
         image: image17,
         name: "table lamp",
-        price: "$43"
+        price: "$43",
+        dateCategory: 'lamps'
     },
     {
         image: image18,
         name: "mat black lamp",
-        price: "$74"
+        price: "$74",
+        dateCategory: 'lamps'
     },
     {
         image: image19,
         name: "confy chair",
-        price: "$10"
+        price: "$10",
+        dateCategory: 'chairs'
     },
     {
         image: image20,
         name: "body oil 50ml",
-        price: "$82"
+        price: "$82",
+        dateCategory: 'skin-care'
     }
 ]
