@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Footer } from "./components/global/Footer";
 import { Categories } from "./pages/Categories";
 import { useState } from "react";
+import { Product } from "./pages/Product";
 
 function App() {
   let [category, setCategory] = useState("all");
@@ -22,6 +23,9 @@ function App() {
         <Route
           path="/categories/:id"
           element={ <Categories category={ category } setCategory={ handleCategoryChange } /> } />
+        <Route
+          path="/product/:id"
+          element={ <Product /> } />
       </Routes>
       <Footer />
     </>
