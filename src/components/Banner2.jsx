@@ -3,7 +3,7 @@ import banner2 from '../assets/static/banner/banner2.03a2ebf8d998e53d1019.jpg'
 export const Banner2 = () => {
     return (
         <>
-            <div className="container max-w-[1200px] w-full mx-auto my-[6rem] px-5">
+            <div className="container max-w-[1200px] w-full mx-auto my-[6rem]">
                 <div className="w-full flex justify-between overflow-hidden h-[25rem]">
                     <div className="banner-image-div block object-cover w-1/2">
                         <img src={ banner2 } alt="banner1 image" className="banner-image w-[100%] h-[100%] object-cover" />

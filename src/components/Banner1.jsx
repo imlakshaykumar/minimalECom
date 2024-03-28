@@ -3,7 +3,7 @@ import banner1 from '../assets/static/banner/banner1.021adea5caa612e7dea0.jpg'
 export const Banner1 = () => {
     return (
         <>
-            <div className="container max-w-[1200px] w-full mx-auto my-[6rem] px-5">
+            <div className="container max-w-[1200px] w-full mx-auto my-[6rem]">
                 <div className="w-full flex justify-between overflow-hidden h-[25rem]">
                     <div className="banner-info flex flex-col gap-5 justify-center items-start bg-[#e9e9e9] text-start w-1/2 px-[123px]">
                         <h3 className="heading text-2xl font-bold">Creative harmonious living</h3>

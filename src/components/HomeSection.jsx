@@ -8,7 +8,7 @@ import image4 from '../assets/static/home/home-img-4.672d1d0d7656e2a778f6.jpg'
 export const HomeSection = ({ setCategory }) => {
     return (
         <>
-            <div className="container mx-auto max-w-[1200px] px-5">
+            <div className="container mx-auto max-w-[1200px]">
                 <div className="grid-container grid h-[32rem] gap-3 mt-8">
                     <div
                         style={ { gridArea: 'one' } }

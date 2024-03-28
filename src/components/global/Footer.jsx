@@ -2,7 +2,7 @@ import { NewsLetter } from "../NewsLetter"
 
 export const Footer = () => {
   return (
-    <>
+    <div className="mt-[8rem]">
       <NewsLetter />
       <div className="container max-w-full bg-black h-[11rem] flex flex-col justify-center items-center text-center" >
         <div className="footer-content max-w-[1200px] w-full mx-auto px-5">
@@ -19,6 +19,6 @@ export const Footer = () => {
           </div>
         </div>
       </div >
-    </>
+    </div>
   );
 };

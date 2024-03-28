@@ -11,7 +11,7 @@ export const Trending = () => {
 
     return (
         <>
-            <div className="container max-w-[1200px] mx-auto my-16 px-5">
+            <div className="container max-w-[1200px] mx-auto my-16">
                 <div className="trending-head flex justify-between items-center mb-10">
                     <h3 className="text-2xl font-bold">Trending Now</h3>
                     <div className="trending-btn-div flex justify-center items-center gap-1">
@@ -34,7 +34,7 @@ export const Trending = () => {
                                         </div>
                                         <div className="item-info-div p-2">
                                             <p className="item-name">{ item.name }</p>
-                                            <p className="item-price text-xl font-bold mt-3">{ item.price }</p>
+                                            <p className="item-price text-xl font-bold mt-3">${ item.price }</p>
                                         </div>
                                     </div>
                                 );

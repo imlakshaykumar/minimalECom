@@ -6,7 +6,7 @@ export const ProudSection = () => {
 
     return (
         <>
-            <div className="container max-w-[1200px] mx-auto my-16 px-5">
+            <div className="container max-w-[1200px] mx-auto my-16">
                 <div className="heading-div w-full mb-10">
                     <h3 className="heading text-2xl font-bold">Products we are proud of</h3>
                 </div>
@@ -20,7 +20,7 @@ export const ProudSection = () => {
                                     </div>
                                     <div className="item-info-div p-2">
                                         <p className="item-name">{ item.name }</p>
-                                        <p className="item-price text-xl font-bold mt-3">{ item.price }</p>
+                                        <p className="item-price text-xl font-bold mt-3">${ item.price }</p>
                                     </div>
                                 </div>
                             )
