@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { data } from "../utils/data"
 
 export const ProudSection = () => {
@@ -15,13 +16,15 @@ export const ProudSection = () => {
                         slicedData?.map((item, key) => {
                             return (
                                 <div key={ key } className="border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
-                                    <div className="item-image-div">
-                                        <img src={ item.image } alt="image1" className="item-image" />
-                                    </div>
-                                    <div className="item-info-div p-2">
-                                        <p className="item-name">{ item.name }</p>
-                                        <p className="item-price text-xl font-bold mt-3">${ item.price }</p>
-                                    </div>
+                                    <Link to={ `/product/${item.id}` }>
+                                        <div className="item-image-div">
+                                            <img src={ item.image } alt="image1" className="item-image" />
+                                        </div>
+                                        <div className="item-info-div p-2">
+                                            <p className="item-name">{ item.name }</p>
+                                            <p className="item-price text-xl font-bold mt-3">${ item.price }</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             )
                         })

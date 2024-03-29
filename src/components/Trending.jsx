@@ -1,5 +1,6 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { data } from "../utils/data";
+import { Link } from "react-router-dom";
 // import { useState } from "react";
 
 export const Trending = () => {
@@ -29,13 +30,15 @@ export const Trending = () => {
                             filteredData.map((item, key) => {
                                 return (
                                     <div key={ key } className="w-[13rem] h-fit border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
-                                        <div className="item-image-div block" >
-                                            <img src={ item.image } alt="image1" className="item-image object-cover" />
-                                        </div>
-                                        <div className="item-info-div p-2">
-                                            <p className="item-name">{ item.name }</p>
-                                            <p className="item-price text-xl font-bold mt-3">${ item.price }</p>
-                                        </div>
+                                        <Link to={ `/product/${item.id}` }>
+                                            <div className="item-image-div block" >
+                                                <img src={ item.image } alt="image1" className="item-image object-cover" />
+                                            </div>
+                                            <div className="item-info-div p-2">
+                                                <p className="item-name">{ item.name }</p>
+                                                <p className="item-price text-xl font-bold mt-3">${ item.price }</p>
+                                            </div>
+                                        </Link>
                                     </div>
                                 );
                             })
