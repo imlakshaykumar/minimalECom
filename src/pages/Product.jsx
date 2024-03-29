@@ -2,9 +2,24 @@ import { useState } from "react";
 import { data } from "../utils/data"
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { Trending } from "../components/Trending";
+import { useLocation } from 'react-router-dom'
+import { useEffect } from "react";
 
 export const Product = () => {
-    const filteredData = data.slice(0, 1);
+
+    const location = useLocation();
+    const pathnameParts = location.pathname.split("/");
+    const id = parseInt(pathnameParts[pathnameParts.length - 1]) || 1; // Convert to number
+
+    let [filteredData, setFilteredData] = useState([]);
+
+    useEffect(() => {
+        const filter = data.filter(item => item.id === id);
+        // console.log(filter);
+        setFilteredData(filter);
+    }, [id]);
+
+
 
     let [count, setCount] = useState(1);
     const handleMinus = () => {
