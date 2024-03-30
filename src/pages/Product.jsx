@@ -39,6 +39,7 @@ export const Product = () => {
                 <div className="product-content-div">
                     {
                         filteredData?.map((item, key) => {
+                            let totalPrice = item.price * count;
                             return (
                                 <div key={ key }>
                                     <div className="product-content flex gap-5 items-center justify-center relative">
@@ -61,7 +62,7 @@ export const Product = () => {
                                                         <FiPlus />
                                                     </div>
                                                 </div>
-                                                <p className="amount text-2xl font-bold p-2">${ item.price * count }</p>
+                                                <p className="amount text-2xl font-bold p-2">${ totalPrice }</p>
                                             </div>
                                             <div className="add-buy-btn-div mt-[2rem] text-lg font-semibold w-full flex justify-between items-center">
                                                 <button className="py-2 px-9 bg-none uppercase border-2 border-black hover:text-white hover:bg-black transition-all duration-75 ease-in cursor-pointer">add to cart</button>
