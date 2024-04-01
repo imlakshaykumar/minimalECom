@@ -1,7 +1,30 @@
 import { Link } from 'react-router-dom'
-import banner1 from '../assets/static/banner/banner1.021adea5caa612e7dea0.jpg'
+import { useEffect, useState } from 'react';
+import axios from 'axios'
 
 export const Banner1 = () => {
+
+    // eslint-disable-next-line no-unused-vars
+    let [bannerData, setBannerData] = useState([]);
+    let [bannerImage, setBannerImage] = useState();
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/api/bannerImage');
+                const data = res.data;
+                setBannerData(data)
+                setBannerImage(data[0].image)
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    // let bannerImage = bannerData[0].image;
+
     return (
         <>
             <div className="container max-w-[1200px] w-full mx-auto my-[6rem]">
@@ -14,7 +37,7 @@ export const Banner1 = () => {
                         </Link>
                     </div>
                     <div className="banner-image-div block object-cover w-1/2">
-                        <img src={ banner1 } alt="banner1 image" className="banner-image w-[100%] h-[100%] object-cover" />
+                        <img src={ bannerImage } alt="banner1 image" className="banner-image w-[100%] h-[100%] object-cover" />
                     </div>
                 </div>
             </div>

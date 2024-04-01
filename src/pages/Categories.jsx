@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { MdChevronLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { data } from "../utils/data";
 import { useState, useEffect } from "react";
+import axios from "axios";
 // eslint-disable-next-line react/prop-types
 export const Categories = ({ category, setCategory }) => {
     let [filteredData, setFilteredData] = useState([]);
@@ -13,13 +13,24 @@ export const Categories = ({ category, setCategory }) => {
     }
 
     useEffect(() => {
-        if (category.toLowerCase() === 'all') {
-            setFilteredData(data);
-        } else {
-            const filtered = data.filter(item => item.dataCategory.toLowerCase() === category.toLowerCase());
-            setFilteredData(filtered);
-        }
+        const fetchData = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/api/products');
+                const data = res.data;
+                if (category.toLowerCase() === 'all') {
+                    setFilteredData(data);
+                } else {
+                    const filtered = data.filter(item => item.dataCategory.toLowerCase() === category.toLowerCase());
+                    setFilteredData(filtered);
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
     }, [category]);
+
+
 
 
     return (

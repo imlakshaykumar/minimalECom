@@ -1,14 +1,32 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import { data } from "../utils/data";
+// import { data } from "../utils/data";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 // import { useState } from "react";
 
 export const Trending = () => {
-    let startIndex = 8;
-    let endIndex = 20;
+    // let startIndex = 8;
+    // let endIndex = 20;
 
-    const filteredData = data.slice(startIndex, endIndex);
+    let [filteredData, setFilteredData] = useState([]);
 
+
+    //  filteredData = data.slice(startIndex, endIndex);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/api/products');
+                const data = res.data;
+                const filtered = data.slice(8, 20);
+                setFilteredData(filtered);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, []);
 
     return (
         <>

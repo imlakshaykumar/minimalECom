@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { data } from "../utils/data"
+// import { data } from "../utils/data"
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { Trending } from "../components/Trending";
 import { useLocation } from 'react-router-dom'
 import { useEffect } from "react";
+import axios from 'axios'
 
 export const Product = () => {
 
@@ -14,9 +15,18 @@ export const Product = () => {
     let [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        const filter = data.filter(item => item.id === id);
-        // console.log(filter);
-        setFilteredData(filter);
+        const fetchData = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/api/products');
+                const data = res.data;
+                const filter = data.filter(item => item.id === id);
+                // console.log(filter);
+                setFilteredData(filter);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
     }, [id]);
 
 
