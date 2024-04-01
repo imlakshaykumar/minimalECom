@@ -13,7 +13,7 @@ export const Banner2 = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/bannerImage');
+                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/bannerImage`);
                 const data = res.data;
                 setBannerData(data)
                 setBannerImage(data[1].image)

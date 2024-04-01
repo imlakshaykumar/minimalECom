@@ -17,7 +17,7 @@ export const Trending = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/products');
+                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/products`);
                 const data = res.data;
                 const filtered = data.slice(8, 20);
                 setFilteredData(filtered);

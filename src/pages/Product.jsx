@@ -17,7 +17,7 @@ export const Product = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/products');
+                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/products`);
                 const data = res.data;
                 const filter = data.filter(item => item.id === id);
                 // console.log(filter);

@@ -15,7 +15,7 @@ export const Categories = ({ category, setCategory }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/products');
+                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/products`);
                 const data = res.data;
                 if (category.toLowerCase() === 'all') {
                     setFilteredData(data);
