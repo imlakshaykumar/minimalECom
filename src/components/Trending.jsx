@@ -50,7 +50,7 @@ export const Trending = () => {
                                     <div key={ key } className="w-[13rem] h-fit border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                         <Link to={ `/product/${item.id}` }>
                                             <div className="item-image-div block" >
-                                                <img src={ item.image } alt="image1" className="item-image object-cover" />
+                                                <img src={ item.image } loading="lazy" alt="image1" className="item-image object-cover" />
                                             </div>
                                             <div className="item-info-div p-2">
                                                 <p className="item-name">{ item.name }</p>

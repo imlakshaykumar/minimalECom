@@ -37,7 +37,7 @@ export const Banner1 = () => {
                         </Link>
                     </div>
                     <div className="banner-image-div block object-cover w-1/2">
-                        <img src={ bannerImage } alt="banner1 image" className="banner-image w-[100%] h-[100%] object-cover" />
+                        <img src={ bannerImage } alt="banner1 image" loading='lazy' className="banner-image w-[100%] h-[100%] object-cover" />
                     </div>
                 </div>
             </div>

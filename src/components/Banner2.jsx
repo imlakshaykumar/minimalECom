@@ -29,7 +29,7 @@ export const Banner2 = () => {
             <div className="container max-w-[1200px] w-full mx-auto my-[6rem]">
                 <div className="w-full flex justify-between overflow-hidden h-[25rem]">
                     <div className="banner-image-div block object-cover w-1/2">
-                        <img src={ bannerImage } alt="banner1 image" className="banner-image w-[100%] h-[100%] object-cover" />
+                        <img src={ bannerImage } alt="banner1 image" loading="lazy" className="banner-image w-[100%] h-[100%] object-cover" />
                     </div>
                     <div className="banner-info flex flex-col gap-5 justify-center items-start bg-[#e9e9e9] text-start w-1/2 px-[123px]">
                         <h3 className="heading text-2xl font-bold">Comfortable & Elegante Living</h3>

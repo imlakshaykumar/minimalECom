@@ -79,7 +79,7 @@ export const Categories = ({ category, setCategory }) => {
                                 <div key={ key } className="border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                     <Link to={ `/product/${item.id}` }>
                                         <div className="item-image-div">
-                                            <img src={ item.image } alt="image1" className="item-image" />
+                                            <img src={ item.image } alt="image1" className="item-image" loading="lazy" />
                                         </div>
                                         <div className="item-info-div p-2">
                                             <p className="item-name">{ item.name }</p>

@@ -55,7 +55,7 @@ export const Product = () => {
                                     <div className="product-content flex gap-5 items-center justify-center relative">
                                         <div className="productName inset-0 w-fit h-fit absolute mx-auto mt-1 text-3xl p-5 font-bold">{ item.name }</div>
                                         <div className="product-img-div w-1/2">
-                                            <img src={ item.image } alt="" />
+                                            <img src={ item.image } alt="" loading="lazy" />
                                         </div>
                                         <div className="product-desc flex flex-col gap-8 bg-gray-200 pt-[9rem] p-[4rem] w-1/2">
                                             <p className="description text-lg">
