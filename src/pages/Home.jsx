@@ -4,17 +4,36 @@ import { HomeSection } from "../components/HomeSection"
 import { ProudSection } from "../components/ProudSection"
 import { Trending } from "../components/Trending"
 
-// eslint-disable-next-line react/prop-types
-export const Home = ({ setCategory }) => {
+export const Home = ({
+    setCategory,
+    bannerImage_1,
+    bannerImage_2,
+    homeData,
+    proudFilterData,
+    trendingData
+}) => {
     return (
         <>
             <main>
-                <HomeSection setCategory={ setCategory } />
-                <ProudSection />
-                <Banner1 />
-                <Trending />
-                <Banner2 />
+                <HomeSection
+                    setCategory={ setCategory }
+                    homeData={ homeData }
+                />
+                <ProudSection
+                    proudFilterData={ proudFilterData }
+                />
+                <Banner1
+                    bannerImage_1={ bannerImage_1 }
+                />
+                <Trending
+                    trendingData={ trendingData }
+                />
+                <Banner2
+                    bannerImage_2={ bannerImage_2 }
+                />
             </main>
         </>
     )
 }
+
+Home.propTypes;

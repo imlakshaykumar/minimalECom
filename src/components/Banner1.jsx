@@ -1,30 +1,6 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
-import axios from 'axios'
 
-export const Banner1 = () => {
-
-    // eslint-disable-next-line no-unused-vars
-    let [bannerData, setBannerData] = useState([]);
-    let [bannerImage, setBannerImage] = useState();
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/bannerImage`);
-                const data = res.data;
-                setBannerData(data)
-                setBannerImage(data[0].image)
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
-    // let bannerImage = bannerData[0].image;
-
+export const Banner1 = ({ bannerImage_1 }) => {
     return (
         <>
             <div className="container max-w-[1200px] w-full mx-auto my-[6rem]">
@@ -37,10 +13,12 @@ export const Banner1 = () => {
                         </Link>
                     </div>
                     <div className="banner-image-div block object-cover w-1/2">
-                        <img src={ bannerImage } alt="banner1 image" loading='lazy' className="banner-image w-[100%] h-[100%] object-cover" />
+                        <img src={ bannerImage_1 } alt="banner1 image" loading='lazy' className="banner-image w-[100%] h-[100%] object-cover" />
                     </div>
                 </div>
             </div>
         </>
     )
 }
+
+Banner1.propTypes;

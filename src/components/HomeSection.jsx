@@ -1,26 +1,6 @@
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
 
-export const HomeSection = ({ setCategory }) => {
-
-    let [homeData, sethomeData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/homeImage`);
-                const data = res.data;
-                sethomeData(data)
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
-
+export const HomeSection = ({ setCategory, homeData }) => {
     return (
         <>
             <div className="container mx-auto max-w-[1200px]">
@@ -79,3 +59,5 @@ export const HomeSection = ({ setCategory }) => {
         </>
     )
 }
+
+HomeSection.propTypes;

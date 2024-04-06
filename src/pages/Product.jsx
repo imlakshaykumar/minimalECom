@@ -1,18 +1,18 @@
 import { useState } from "react";
-// import { data } from "../utils/data"
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { Trending } from "../components/Trending";
 import { useLocation } from 'react-router-dom'
 import { useEffect } from "react";
 import axios from 'axios'
 
-export const Product = () => {
+export const Product = ({ trendingData }) => {
 
     const location = useLocation();
     const pathnameParts = location.pathname.split("/");
     const id = parseInt(pathnameParts[pathnameParts.length - 1]) || 1; // Convert to number
 
     let [filteredData, setFilteredData] = useState([]);
+    let [count, setCount] = useState(1);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,9 +29,6 @@ export const Product = () => {
         fetchData();
     }, [id]);
 
-
-
-    let [count, setCount] = useState(1);
     const handleMinus = () => {
         if (count === 1) {
             return;
@@ -99,8 +96,10 @@ export const Product = () => {
                         })
                     }
                 </div>
-                <Trending />
+                <Trending trendingData={ trendingData } />
             </div>
         </>
     )
 }
+
+Product.propTypes;

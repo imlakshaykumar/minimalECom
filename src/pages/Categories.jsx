@@ -1,37 +1,12 @@
-/* eslint-disable react/prop-types */
 import { MdChevronLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
-// eslint-disable-next-line react/prop-types
-export const Categories = ({ category, setCategory }) => {
-    let [filteredData, setFilteredData] = useState([]);
+
+export const Categories = ({ category, setCategory, categoryData }) => {
 
     const handleFilterClick = (e) => {
         let value = e.target.textContent;
         setCategory(value);
     }
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/products`);
-                const data = res.data;
-                if (category.toLowerCase() === 'all') {
-                    setFilteredData(data);
-                } else {
-                    const filtered = data.filter(item => item.dataCategory.toLowerCase() === category.toLowerCase());
-                    setFilteredData(filtered);
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, [category]);
-
-
-
 
     return (
         <>
@@ -74,7 +49,7 @@ export const Categories = ({ category, setCategory }) => {
                 </div>
                 <div className="content grid grid-cols-4 gap-5 mt-[4rem] mb-[8rem]">
                     {
-                        filteredData?.map((item, key) => {
+                        categoryData?.map((item, key) => {
                             return (
                                 <div key={ key } className="border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                     <Link to={ `/product/${item.id}` }>
@@ -95,3 +70,5 @@ export const Categories = ({ category, setCategory }) => {
         </>
     )
 }
+
+Categories.propTypes;

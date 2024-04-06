@@ -1,33 +1,7 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-// import { data } from "../utils/data";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
-// import { useState } from "react";
 
-export const Trending = () => {
-    // let startIndex = 8;
-    // let endIndex = 20;
-
-    let [filteredData, setFilteredData] = useState([]);
-
-
-    //  filteredData = data.slice(startIndex, endIndex);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/products`);
-                const data = res.data;
-                const filtered = data.slice(8, 20);
-                setFilteredData(filtered);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
+export const Trending = ({ trendingData }) => {
     return (
         <>
             <div className="container max-w-[1200px] mx-auto my-16">
@@ -45,7 +19,7 @@ export const Trending = () => {
                 <div className="trending-content w-full grid grid-rows-1 grid-flow-col overflow-y-hidden overflow-x-auto scrollbar-none">
                     <div className="flex gap-5">
                         {
-                            filteredData.map((item, key) => {
+                            trendingData.map((item, key) => {
                                 return (
                                     <div key={ key } className="w-[13rem] h-fit border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                         <Link to={ `/product/${item.id}` }>
@@ -67,3 +41,5 @@ export const Trending = () => {
         </>
     )
 }
+
+Trending.propTypes;

@@ -1,30 +1,6 @@
 import { Link } from "react-router-dom";
-// import { data } from "../utils/data"
-import { useState, useEffect } from "react";
-import axios from 'axios'
 
-export const ProudSection = () => {
-
-    // const slicedData = data.slice(0, 8);
-    let [filteredData, setFilteredData] = useState([]);
-
-
-    //  filteredData = data.slice(startIndex, endIndex);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/products`);
-                const data = res.data;
-                const filtered = data.slice(0, 8);
-                setFilteredData(filtered);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
+export const ProudSection = ({ proudFilterData }) => {
     return (
         <>
             <div className="container max-w-[1200px] mx-auto my-16">
@@ -33,7 +9,7 @@ export const ProudSection = () => {
                 </div>
                 <div className="products-div grid grid-cols-4 gap-5">
                     {
-                        filteredData?.map((item, key) => {
+                        proudFilterData?.map((item, key) => {
                             return (
                                 <div key={ key } className="border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                     <Link to={ `/product/${item.id}` }>
@@ -54,3 +30,5 @@ export const ProudSection = () => {
         </>
     )
 }
+
+ProudSection.propTypes;

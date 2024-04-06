@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import logo from '/vite.svg'
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-export const NavBar = ({ category, setCategory }) => {
+export const NavBar = ({ setCategory }) => {
+
   const handleCategoryClick = () => {
     setCategory('all');
   };
+
   return (
     <div className='w-full flex justify-center shadow-md'>
       <div className='flex w-[1200px] justify-between items-center px-2 py-6'>
