@@ -24,12 +24,14 @@ export const Home = ({
                 />
                 <Banner1
                     bannerImage_1={ bannerImage_1 }
+                    setCategory={ setCategory }
                 />
                 <Trending
                     trendingData={ trendingData }
                 />
                 <Banner2
                     bannerImage_2={ bannerImage_2 }
+                    setCategory={ setCategory }
                 />
             </main>
         </>

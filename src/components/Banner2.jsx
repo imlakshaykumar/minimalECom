@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 
-export const Banner2 = ({ bannerImage_2 }) => {
+export const Banner2 = ({ setCategory, bannerImage_2 }) => {
+
+    const handleShopBtn = () => {
+        setCategory('all');
+    };
     return (
         <>
             <div className="container max-w-[1200px] w-full mx-auto my-[6rem]">
@@ -12,7 +16,7 @@ export const Banner2 = ({ bannerImage_2 }) => {
                         <h3 className="heading text-2xl font-bold">Comfortable & Elegante Living</h3>
                         <p className="para">RAOUF Products are all made to standard sizes so that you can mix and match them freely.</p>
                         <Link to='categories/all'>
-                            <button className="shop-btn uppercase border-2 border-black bg-black text-white py-2 px-5 text-base font-semibold hover:bg-transparent hover:text-black transition-all duration-100 ease-in">shop now</button>
+                            <button className="shop-btn uppercase border-2 border-black bg-black text-white py-2 px-5 text-base font-semibold hover:bg-transparent hover:text-black transition-all duration-100 ease-in" onClick={ handleShopBtn }>shop now</button>
                         </Link>
                     </div>
                 </div>
