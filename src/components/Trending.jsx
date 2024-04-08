@@ -1,7 +1,13 @@
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import { productData } from "../data/productData";
 import { Link } from "react-router-dom";
 
-export const Trending = ({ trendingData }) => {
+export const Trending = () => {
+    let startIndex = 8;
+    let endIndex = 20;
+
+    const filteredData = productData.slice(startIndex, endIndex);
+
     return (
         <>
             <div className="container max-w-[1200px] mx-auto my-16">
@@ -19,12 +25,12 @@ export const Trending = ({ trendingData }) => {
                 <div className="trending-content w-full grid grid-rows-1 grid-flow-col overflow-y-hidden overflow-x-auto scrollbar-none">
                     <div className="flex gap-5">
                         {
-                            trendingData.map((item, key) => {
+                            filteredData.map((item, key) => {
                                 return (
                                     <div key={ key } className="w-[13rem] h-fit border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                         <Link to={ `/product/${item.id}` }>
                                             <div className="item-image-div block" >
-                                                <img src={ item.image } loading="lazy" alt="image1" className="item-image object-cover" />
+                                                <img src={ item.image } alt="image1" className="item-image object-cover" />
                                             </div>
                                             <div className="item-info-div p-2">
                                                 <p className="item-name">{ item.name }</p>
@@ -41,5 +47,3 @@ export const Trending = ({ trendingData }) => {
         </>
     )
 }
-
-Trending.propTypes;

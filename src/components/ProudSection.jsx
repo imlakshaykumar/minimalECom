@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { productData } from "../data/productData";
 
-export const ProudSection = ({ proudFilterData }) => {
+export const ProudSection = () => {
+
+    const slicedData = productData.slice(0, 8);
+
     return (
         <>
             <div className="container max-w-[1200px] mx-auto my-16">
@@ -9,12 +13,12 @@ export const ProudSection = ({ proudFilterData }) => {
                 </div>
                 <div className="products-div grid grid-cols-4 gap-5">
                     {
-                        proudFilterData?.map((item, key) => {
+                        slicedData?.map((item, key) => {
                             return (
                                 <div key={ key } className="border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                     <Link to={ `/product/${item.id}` }>
                                         <div className="item-image-div">
-                                            <img src={ item.image } loading="lazy" alt="image1" className="item-image" />
+                                            <img src={ item.image } alt="image1" className="item-image" />
                                         </div>
                                         <div className="item-info-div p-2">
                                             <p className="item-name">{ item.name }</p>
@@ -30,5 +34,3 @@ export const ProudSection = ({ proudFilterData }) => {
         </>
     )
 }
-
-ProudSection.propTypes;

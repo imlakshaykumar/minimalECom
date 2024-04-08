@@ -1,12 +1,26 @@
+/* eslint-disable react/prop-types */
 import { MdChevronLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
-
-export const Categories = ({ category, setCategory, categoryData }) => {
+import { productData } from '../data/productData'
+import { useState, useEffect } from "react";
+// eslint-disable-next-line react/prop-types
+export const Categories = ({ category, setCategory }) => {
+    let [filteredData, setFilteredData] = useState([]);
 
     const handleFilterClick = (e) => {
         let value = e.target.textContent;
         setCategory(value);
     }
+
+    useEffect(() => {
+        if (category.toLowerCase() === 'all') {
+            setFilteredData(productData);
+        } else {
+            const filtered = productData.filter(item => item.dataCategory.toLowerCase() === category.toLowerCase());
+            setFilteredData(filtered);
+        }
+    }, [category]);
+
 
     return (
         <>
@@ -49,12 +63,12 @@ export const Categories = ({ category, setCategory, categoryData }) => {
                 </div>
                 <div className="content grid grid-cols-4 gap-5 mt-[4rem] mb-[8rem]">
                     {
-                        categoryData?.map((item, key) => {
+                        filteredData?.map((item, key) => {
                             return (
                                 <div key={ key } className="border-2 border-gray-300 hover:border-black transition-all duration-100 ease-in cursor-pointer">
                                     <Link to={ `/product/${item.id}` }>
                                         <div className="item-image-div">
-                                            <img src={ item.image } alt="image1" className="item-image" loading="lazy" />
+                                            <img src={ item.image } alt="image1" className="item-image" />
                                         </div>
                                         <div className="item-info-div p-2">
                                             <p className="item-name">{ item.name }</p>
@@ -70,5 +84,3 @@ export const Categories = ({ category, setCategory, categoryData }) => {
         </>
     )
 }
-
-Categories.propTypes;
